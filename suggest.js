@@ -11,12 +11,29 @@ $(function(){
                     // show sugg if reqId sent out is the same as recv
                     var suggArr=[], suggTxt;
                     $(data['sugg']).each(function(idx,v){
-                        suggArr.push('<div><p>'+v+'</p></div>');
+                        suggArr.push('<p><span>'+v+'</span></p>');
                     })
                     suggArr.push('');
                     $('#suggestList').html(suggArr.join(''));
+                    changePosition(self, '#suggestList');
                 }
             });
         }
     });
+    function changePosition(input, sugg){
+        var pTop = $(input).position().top + $(input).outerHeight(true);
+        var pLeft = $(input).position().left;
+        var pRight = $(input).position().right;
+        $(sugg).css({
+            'position': 'absolute',
+            'border': 'solid 1px',
+            'width': $(input).outerWidth(true),
+            'left': $(input).position().left-1,
+            'top': $(input).position().top + $(input).outerHeight(true)
+        }).toggle(true);
+        $('p', sugg).css({
+            'margin': 0,
+            'padding': 0
+        });
+    }
 })
