@@ -9,11 +9,11 @@ $(function(){
             $.getJSON('sugg.php?key=' + key, function(data){
                 if (data['key'] == key && data['sugg'].length>0){
                     // show sugg if reqId sent out is the same as recv
-                    var suggArr=['<ul>'], suggTxt;
+                    var suggArr=[], suggTxt;
                     $(data['sugg']).each(function(idx,v){
-                        suggArr.push('<li>'+v+'</li>');
+                        suggArr.push('<div><p>'+v+'</p></div>');
                     })
-                    suggArr.push('</ul>');
+                    suggArr.push('');
                     $('#suggestList').html(suggArr.join(''));
                 }
             });
