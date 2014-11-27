@@ -6,8 +6,7 @@
 </head>
 <body>
 <div style='margin:50px 200px;'>
-  <input id='suggest' style='padding: 10px' maxlength="100" autocomplete=false>
+  <input id='input' style='padding: 10px' maxlength="100" autocomplete=false>
 </div>
-<div id='suggestList' style='position:absolute; display:none;'></div>
 </body>
 </html>
