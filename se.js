@@ -51,9 +51,7 @@ $(function(){
          * bind key event, bind click, bind page list
          */
         self.init = function(){
-            // bind q on button
-            self.domSearch.click(self.query);
-            // bind q with enter
+            // bind q on form
             self.domForm.submit(function(e){
                 e.preventDefault();
                 self.query();
