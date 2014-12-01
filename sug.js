@@ -44,6 +44,12 @@ $(function(){
                 'top': pos.top + self.domInput.outerHeight() + 10,
             }).toggle(true);
             self.sugShown = true;
+            $('ul li', self.domSug).on('click', function(){
+                self.domInput.val($(this).html());
+                self.sugShown = false;
+                self.domSug.html('').toggle(false);
+                $('#hdForm').submit();
+            });
         };
         self.selSug = function(isDown){
             if (!self.sugShown)return;
